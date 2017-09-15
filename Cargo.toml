@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "ipp-ctypes",
+    "ipp-headers-sys",
+    "ipp-sys-build-help",
+    "ipp-sys",
+    "link-ippcore",
+    "link-ippcv",
+    "link-ippi",
+    "link-ipps",
+    ]

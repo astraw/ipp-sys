@@ -1,0 +1,16 @@
+[package]
+name = "link-ippcore"
+description = "link ippcore library (part of ipp-sys Intel IPP bindings)"
+version = "0.1.0"
+authors = ["Andrew Straw <strawman@astraw.com>"]
+build = "build.rs"
+links = "libippcore"
+repository = "https://github.com/astraw/ipp-sys"
+license = "MIT/Apache-2.0"
+categories = ["external-ffi-bindings"]
+readme = "README.md"
+
+[dependencies]
+
+[build-dependencies]
+ipp-sys-build-help = { version = "0.1", path = "../ipp-sys-build-help" }
