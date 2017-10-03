@@ -1,6 +1,6 @@
 [package]
 name = "ipp-headers-sys"
-description = "rust-bindgen generated FFI definitions for IPP (part of ipp-sys Intel IPP bindings)"
+description = "rust-bindgen generated FFI declarations for IPP (part of ipp-sys Intel IPP bindings)"
 version = "0.1.0"
 authors = ["Andrew Straw <strawman@astraw.com>"]
 repository = "https://github.com/astraw/ipp-sys"

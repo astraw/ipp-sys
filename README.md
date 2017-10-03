@@ -1,4 +1,4 @@
-# ipp-sys - bindings to Intel IPP description
+# ipp-sys - bindings to Intel IPP
 
 This directory contains several crates:
 
