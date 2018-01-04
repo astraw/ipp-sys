@@ -7,6 +7,10 @@ repository = "https://github.com/astraw/ipp-sys"
 license = "MIT/Apache-2.0"
 categories = ["external-ffi-bindings"]
 readme = "README.md"
+build = "build.rs"
 
 [dependencies]
 ipp-ctypes = { version = "0.1", path = "../ipp-ctypes" }
+
+[build-dependencies]
+bindgen = "0.32"
