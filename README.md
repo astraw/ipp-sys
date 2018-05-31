@@ -14,6 +14,10 @@ This directory contains several crates:
 Typically, you can just depend on `ipp-sys`. The `link-*` crates do not provide any rust code, but only serve
 to link the relevant IPP library.
 
+## Version support
+
+Currently IPP 2017 is supported.
+
 ## Download IPP
 
 Get IPP from https://software.intel.com/en-us/intel-ipp
