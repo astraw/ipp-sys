@@ -10,8 +10,8 @@ This directory contains several crates:
  - `link-ippi`: link ippi library
  - `link-ipps`: link ipps library
 
-Typically, you can just depend on `ipp-sys`. The `link-*` crates do not provide any rust code, but only serve
-to link the relevant IPP library.
+Typically, you can just depend on `ipp-sys`. The `link-*` crates do not provide
+any rust code, but only serve to link the relevant IPP library.
 
 ## Version support
 
@@ -24,26 +24,32 @@ Get IPP from https://software.intel.com/en-us/intel-ipp
 
 ## Usage
 
-Compile IPP statically into your app by setting environment variable `IPP_STATIC=1`.
+Compile IPP statically into your app by setting environment variable
+`IPP_STATIC=1`.
 
-You must set the `IPPROOT` environment variable. This is used by the `build.rs` files in the crates here to find your IPP installation. Typically, this is set using a tool provided by Intel with IPP and run as follows.
+You must set the `IPPROOT` environment variable. This is used by the `build.rs`
+files in the crates here to find your IPP installation. Typically, this is set
+using a tool provided by Intel with IPP and run as follows.
 
 On Linux:
 
-    source /opt/intel/bin/compilervars.sh -arch intel64 -platform linux
+    source /opt/intel/compilers_and_libraries_2019/linux/ipp/bin/ippvars.sh -arch intel64 -platform linux
 
 On Mac:
 
-    source /opt/intel/compilers_and_libraries/mac/bin/compilervars.sh -arch intel64 -platform mac
+    source /opt/intel/compilers_and_libraries_2019/mac/bin/compilervars.sh -arch intel64 -platform mac
 
 On Windows:
 
-    "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2017\windows\ipp\bin\ippvars.bat" intel64
+    "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019\windows\ipp\bin\ippvars.bat" intel64
 
-Now you can build your crate that depends on IPP with a standard cargo command, such as:
+Update your `Cargo.toml` to include the `ipp-sys` dependency and use a cargo
+feature to selecting the IPP version used:
 
-    # Inside the path with your crate's Cargo.toml
-    cargo build
+    [dependencies]
+    ipp-sys = { version = "0.4", features=["2019"] }
+
+Now, you can use `ipp_sys` in your crate.
 
 ## License
 
