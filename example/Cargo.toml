@@ -2,6 +2,12 @@
 name = "example"
 version = "0.1.0"
 authors = ["Andrew Straw <strawman@astraw.com>"]
+edition = "2018"
 
 [dependencies]
-ipp-sys = { version = "0.4", path = "../ipp-sys", features=["2018"] }
+ipp-sys = { version = "0.4", path = "../ipp-sys" }
+
+[features]
+2017=["ipp-sys/2017"]
+2018=["ipp-sys/2018"]
+2019=["ipp-sys/2019"]
