@@ -1,4 +1,4 @@
-{{badges}}
+[![crates.io](https://meritbadge.herokuapp.com/ipp-sys)](https://crates.io/crates/ipp-sys)
 
 # ipp-sys - Bindings to Intel Integrated Performance Primitives (Intel IPP).
 
