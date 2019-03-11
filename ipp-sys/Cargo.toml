@@ -9,6 +9,9 @@ categories = ["external-ffi-bindings"]
 readme = "README.md"
 edition = "2018"
 
+[package.metadata.docs.rs]
+features = [ "2019" ]
+
 [dependencies]
 ipp-headers-sys = { version = "0.4", path = "../ipp-headers-sys" }
 link-ippcore = { version = "0.1", path = "../link-ippcore" }
