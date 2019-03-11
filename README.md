@@ -11,7 +11,10 @@ This directory contains several crates:
  - `link-ipps`: link ipps library
 
 Typically, you can just depend on `ipp-sys`. The `link-*` crates do not provide
-any rust code, but only serve to link the relevant IPP library.
+any rust code, but only serve to link the relevant IPP library. There are
+multiple `link-*` crates because [the Cargo manifest `links` field supports only
+linking only a single library per
+crate](https://doc.rust-lang.org/cargo/reference/manifest.html#the-links-field-optional).
 
 ## Version support
 
@@ -43,13 +46,25 @@ On Windows:
 
     "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019\windows\ipp\bin\ippvars.bat" intel64
 
-Update your `Cargo.toml` to include the `ipp-sys` dependency and use a cargo
-feature to selecting the IPP version used:
+In `Cargo.toml`, include `ipp-sys` as a dependency with a feature to select the
+IPP version used:
 
     [dependencies]
     ipp-sys = { version = "0.4", features=["2019"] }
 
-Now, you can use `ipp_sys` in your crate.
+Now, you can use `ipp_sys` in your crate. You might like to check that you
+compiled the correct version by doing something like:
+
+```
+// Get the version from IPP at runtime.
+let linked_version_major = unsafe{ (*ipp_sys::ippGetLibVersion()).major };
+let linked_version_minor = unsafe{ (*ipp_sys::ippGetLibVersion()).minor };
+
+// Compare the runtime major version with the compile-time major version.
+assert_eq!( linked_version_major as i32, ipp_sys::IPP_VERSION_MAJOR as i32);
+// And compare the minor version, too.
+assert_eq!( linked_version_minor as i32, ipp_sys::IPP_VERSION_MINOR as i32);
+```
 
 ## License
 
