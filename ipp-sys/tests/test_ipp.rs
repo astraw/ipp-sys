@@ -8,6 +8,15 @@ macro_rules! ipp_assert {
 
 #[test]
 fn test_link_ippcore() {
+    // Get the version from IPP at runtime.
+    let linked_version_major = unsafe{ (*ipp::ippGetLibVersion()).major };
+    let linked_version_minor = unsafe{ (*ipp::ippGetLibVersion()).minor };
+
+    // Compare the runtime major version with the compile-time major version.
+    assert_eq!( linked_version_major as i32, ipp::IPP_VERSION_MAJOR as i32);
+    // And compare the minor version, too.
+    assert_eq!( linked_version_minor as i32, ipp::IPP_VERSION_MINOR as i32);
+
     ipp_assert!(ipp::ippInit());
     println!("ippcore OK");
 }
