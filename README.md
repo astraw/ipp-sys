@@ -3,7 +3,6 @@
 This directory contains several crates:
 
  - `ipp-sys`: toplevel convenience crate that depends on `ipp-headers-sys` and `link-*` crates
- - `ipp-ctypes`: C types used by IPP
  - `ipp-headers-sys`: provide FFI headers from `ipp.h` (made with `bindgen`)
  - `ipp-sys-build-help`: helper for build.rs in the `link-*` crates
  - `link-ippcore`: link ippcore library
@@ -16,7 +15,8 @@ to link the relevant IPP library.
 
 ## Version support
 
-Currently IPP 2017 is supported.
+Use the `2017`, `2018`, or `2019` cargo feature to use IPP 2017, 2018, or 2019
+respectively.
 
 ## Download IPP
 

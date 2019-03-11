@@ -2,7 +2,7 @@ extern crate ipp_sys as ipp;
 
 macro_rules! ipp_assert {
     ($result:expr) => {
-        assert!(unsafe{$result}==ipp::IppStatus::ippStsNoErr);
+        assert!(unsafe{$result}==ipp::ippStsNoErr as i32);
     }
 }
 
@@ -18,8 +18,8 @@ fn test_link_ippi() {
     // and this test partly checks if linking is OK without explicitly
     // pulling in ippcore. ippInit() is defined in ippcore.
 
-    const W: ipp::ctypes::c_int = 20;
-    const H: ipp::ctypes::c_int = 20;
+    const W: ::std::os::raw::c_int = 20;
+    const H: ::std::os::raw::c_int = 20;
     let size = ipp::IppiSize { width: W, height: H };
 
     // Allocate memory for an image. Note: aligned allocation is not done
@@ -37,8 +37,8 @@ fn test_link_ippcv() {
     // Not calling ippInit() because allegedly this is not necessary
     // and this test partly checks if linking is OK without explicitly
     // pulling in ippcore. ippInit() is defined in ippcore.
-    const W: ipp::ctypes::c_int = 20;
-    const H: ipp::ctypes::c_int = 20;
+    const W: ::std::os::raw::c_int = 20;
+    const H: ::std::os::raw::c_int = 20;
     let size = ipp::IppiSize { width: W, height: H };
 
     let src = [10u8; (W*H) as usize];
@@ -57,7 +57,7 @@ fn test_link_ipps() {
     // pulling in ippcore. ippInit() is defined in ippcore.
     use ipp::Ipp32f;
 
-    const W: ipp::ctypes::c_int = 20;
+    const W: ::std::os::raw::c_int = 20;
     let src = [ -1.23 as Ipp32f; W as usize];
     let mut dest = [ 0 as Ipp32f; W as usize];
 

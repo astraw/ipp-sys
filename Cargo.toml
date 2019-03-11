@@ -1,6 +1,6 @@
 [workspace]
 members = [
-    "ipp-ctypes",
+    "example",
     "ipp-headers-sys",
     "ipp-sys-build-help",
     "ipp-sys",

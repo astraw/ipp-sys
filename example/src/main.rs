@@ -2,15 +2,15 @@ extern crate ipp_sys as ipp;
 
 macro_rules! ipp_assert {
     ($result:expr) => {
-        assert!(unsafe{$result}==ipp::IppStatus::ippStsNoErr);
+        assert!(unsafe{$result}==ipp::ippStsNoErr as i32);
     }
 }
 
 fn main() {
     ipp_assert!(ipp::ippInit());
 
-    const W: ipp::ctypes::c_int = 20;
-    const H: ipp::ctypes::c_int = 20;
+    const W: ::std::os::raw::c_int = 20;
+    const H: ::std::os::raw::c_int = 20;
     let size = ipp::IppiSize { width: W, height: H };
 
     // Allocate memory for an image. Note: aligned allocation is not done

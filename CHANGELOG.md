@@ -4,6 +4,20 @@ All user visible changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/), as described
 for Rust libraries in [RFC #1105](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md)
 
+## unreleased
+
+### Changed
+
+* IppStatus is now an integer type (and no longer a module).
+* Multiple IPP versions supported. Use the `2017`, `2018`, or `2019` cargo
+  feature to use IPP 2017, 2018, or 2019 respectively.
+* Remove the `ipp-ctypes` crate (use `::std::os::raw` instead).
+
+### Added
+
+* Generate bindings once and check generated file into repository. (Do not
+  regenerate the bindings on each build.)
+
 ## [0.3.0] - 2018-03-28
 
 ### Changed

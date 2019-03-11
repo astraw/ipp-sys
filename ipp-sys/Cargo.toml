@@ -1,17 +1,22 @@
 [package]
 name = "ipp-sys"
 description = "toplevel convenience crate (part of ipp-sys Intel IPP bindings)"
-version = "0.3.0"
+version = "0.4.0"
 authors = ["Andrew Straw <strawman@astraw.com>"]
 repository = "https://github.com/astraw/ipp-sys"
 license = "MIT/Apache-2.0"
 categories = ["external-ffi-bindings"]
 readme = "README.md"
+edition = "2018"
 
 [dependencies]
-ipp-ctypes = { version = "0.1", path = "../ipp-ctypes" }
-ipp-headers-sys = { version = "0.3", path = "../ipp-headers-sys" }
+ipp-headers-sys = { version = "0.4", path = "../ipp-headers-sys" }
 link-ippcore = { version = "0.1", path = "../link-ippcore" }
 link-ippcv = { version = "0.1", path = "../link-ippcv" }
 link-ippi = { version = "0.1", path = "../link-ippi" }
 link-ipps = { version = "0.1", path = "../link-ipps" }
+
+[features]
+2017=["ipp-headers-sys/2017"]
+2018=["ipp-headers-sys/2018"]
+2019=["ipp-headers-sys/2019"]
