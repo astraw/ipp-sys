@@ -65,9 +65,13 @@ assert_eq!( linked_version_minor as i32, ipp_sys::IPP_VERSION_MINOR as i32);
 // The link* creates are used to link the library.
 #![allow(unused_extern_crates)]
 extern crate ipp_headers_sys;
+#[cfg(feature="do-linking")]
 extern crate link_ippcore;
+#[cfg(feature="do-linking")]
 extern crate link_ippcv;
+#[cfg(feature="do-linking")]
 extern crate link_ippi;
+#[cfg(feature="do-linking")]
 extern crate link_ipps;
 
 pub use ipp_headers_sys::*;

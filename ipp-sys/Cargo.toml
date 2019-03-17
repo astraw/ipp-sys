@@ -10,16 +10,21 @@ readme = "README.md"
 edition = "2018"
 
 [package.metadata.docs.rs]
+no-default-features = true
 features = [ "2019" ]
 
 [dependencies]
 ipp-headers-sys = { version = "0.4", path = "../ipp-headers-sys" }
-link-ippcore = { version = "0.1", path = "../link-ippcore" }
-link-ippcv = { version = "0.1", path = "../link-ippcv" }
-link-ippi = { version = "0.1", path = "../link-ippi" }
-link-ipps = { version = "0.1", path = "../link-ipps" }
+link-ippcore = { version = "0.1", path = "../link-ippcore", optional=true }
+link-ippcv = { version = "0.1", path = "../link-ippcv", optional=true }
+link-ippi = { version = "0.1", path = "../link-ippi", optional=true }
+link-ipps = { version = "0.1", path = "../link-ipps", optional=true }
 
 [features]
+default = ["do-linking"]
+
+do-linking = ["link-ippcore", "link-ippcv", "link-ippi", "link-ipps"]
+
 2017=["ipp-headers-sys/2017"]
 2018=["ipp-headers-sys/2018"]
 2019=["ipp-headers-sys/2019"]
