@@ -61,6 +61,10 @@ let linked_version_minor = unsafe{ (*ipp_sys::ippGetLibVersion()).minor };
 assert_eq!( linked_version_major as i32, ipp_sys::IPP_VERSION_MAJOR as i32);
 // And compare the minor version, too.
 assert_eq!( linked_version_minor as i32, ipp_sys::IPP_VERSION_MINOR as i32);
+
+
+See the [ipp-headers-sys page on docs.rs](http://docs.rs/ipp-headers-sys).
+
 ```
 
 ## A note about this file (`README.md` in the `ipp-sys` crate)
