@@ -60,11 +60,12 @@ assert_eq!( linked_version_major as i32, ipp_sys::IPP_VERSION_MAJOR as i32);
 // And compare the minor version, too.
 assert_eq!( linked_version_minor as i32, ipp_sys::IPP_VERSION_MINOR as i32);
 
+```
+
 # API documentation
 
 See the [ipp-headers-sys page on docs.rs](http://docs.rs/ipp-headers-sys).
 
-```
 */
 
 // The link* creates are used to link the library.
