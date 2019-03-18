@@ -1,3 +1,13 @@
+/*! # What is this crate?
+
+This crate provides wrappers of the Intel Integrated Performance Primitives
+(Intel IPP) library made with rust-bindgen.
+
+See the ipp-sys crate for more information about usage and is normally the
+crate you should use directly.
+
+*/
+
 #![allow(non_upper_case_globals,non_snake_case,non_camel_case_types)]
 
 #[cfg(feature="2017")]
