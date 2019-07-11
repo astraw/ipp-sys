@@ -5,7 +5,7 @@ use std::process::Command;
 fn thin_universal_binary(universal_fname: &PathBuf, thin_fname: &PathBuf, arch: &str) -> PathBuf {
     let thin_dir_str = env::var("OUT_DIR").expect("getting OUT_DIR");
     let thin_dir = Path::new(&thin_dir_str);
-    Command::new("lipo")
+    let exit_status = Command::new("lipo")
         .arg(universal_fname.as_os_str())
         .arg("-thin")
         .arg(arch)
@@ -14,6 +14,11 @@ fn thin_universal_binary(universal_fname: &PathBuf, thin_fname: &PathBuf, arch: 
         .current_dir(&thin_dir)
         .status()
         .expect("running lipo");
+
+    if !exit_status.success() {
+        panic!("failed to thin universal binary with lipo.");
+    }
+
     thin_dir.to_path_buf()
 }
 
