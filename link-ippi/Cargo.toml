@@ -1,7 +1,7 @@
 [package]
 name = "link-ippi"
 description = "link ippi library (part of ipp-sys Intel IPP bindings)"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Andrew Straw <strawman@astraw.com>"]
 build = "build.rs"
 links = "libippi"
@@ -15,4 +15,4 @@ link-ippcore = { version = "0.1", path = "../link-ippcore" }
 link-ipps = { version = "0.1", path = "../link-ipps" }
 
 [build-dependencies]
-ipp-sys-build-help = { version = "0.1", path = "../ipp-sys-build-help" }
+ipp-sys-build-help = { version = "0.1.2", path = "../ipp-sys-build-help" }

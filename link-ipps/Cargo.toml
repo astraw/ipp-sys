@@ -1,7 +1,7 @@
 [package]
 name = "link-ipps"
 description = "link ipps library (part of ipp-sys Intel IPP bindings)"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Andrew Straw <strawman@astraw.com>"]
 build = "build.rs"
 links = "libipps"
@@ -14,4 +14,4 @@ readme = "README.md"
 link-ippcore = { version = "0.1", path = "../link-ippcore" }
 
 [build-dependencies]
-ipp-sys-build-help = { version = "0.1", path = "../ipp-sys-build-help" }
+ipp-sys-build-help = { version = "0.1.2", path = "../ipp-sys-build-help" }
