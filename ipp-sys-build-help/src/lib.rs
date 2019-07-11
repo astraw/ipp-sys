@@ -50,10 +50,13 @@ fn ipp_build_inner(libname: String, libdir_base: PathBuf, target: String, link_t
     match target.as_ref() {
         "x86_64-apple-darwin" => {
             if link_type == "static" {
-                let lib_filename = "lib".to_string() + &libname.to_string() + ".a";
-                let universal_fname = libdir.join(lib_filename.clone());
-                let thin_fname = lib_filename.clone();
-                libdir = thin_universal_binary(&universal_fname, &thin_fname.into(), "x86_64");
+                let lds = libdir_base.to_str().unwrap();
+                if lds.contains("2017") || lds.contains("2018") {
+                    let lib_filename = "lib".to_string() + &libname.to_string() + ".a";
+                    let universal_fname = libdir.join(lib_filename.clone());
+                    let thin_fname = lib_filename.clone();
+                    libdir = thin_universal_binary(&universal_fname, &thin_fname.into(), "x86_64");
+                }
             } else {
                 libdir = libdir.join("intel64");
             }
