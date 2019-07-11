@@ -39,6 +39,7 @@ pub fn ipp_build(libname: &str) {
 }
 
 fn ipp_build_inner(libname: String, libdir_base: PathBuf, target: String, link_type: &str) {
+    let mut final_libname = libname.clone();
     assert!(link_type == "static" || link_type == "dylib");
     let mut libdir = libdir_base.clone();
     match target.as_ref() {
@@ -56,6 +57,9 @@ fn ipp_build_inner(libname: String, libdir_base: PathBuf, target: String, link_t
             libdir = libdir.join("intel64");
         }
         "x86_64-pc-windows-msvc" | "x86_64-pc-windows-gnu" => {
+            if link_type == "static" {
+                final_libname = format!("{}mt", &libname);
+            }
             libdir = libdir.join("intel64");
         }
         t => {
@@ -64,5 +68,5 @@ fn ipp_build_inner(libname: String, libdir_base: PathBuf, target: String, link_t
     }
 
     println!("cargo:rustc-link-search={}", libdir.display());
-    println!("cargo:rustc-link-lib={}={}", link_type, libname);
+    println!("cargo:rustc-link-lib={}={}", link_type, final_libname);
 }
