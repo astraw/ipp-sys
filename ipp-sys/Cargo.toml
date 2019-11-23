@@ -19,11 +19,12 @@ link-ippcore = { version = "0.1.1", path = "../link-ippcore", optional=true }
 link-ippcv = { version = "0.1.2", path = "../link-ippcv", optional=true }
 link-ippi = { version = "0.1.2", path = "../link-ippi", optional=true }
 link-ipps = { version = "0.1.1", path = "../link-ipps", optional=true }
+link-ippvm = { version = "0.1.0", path = "../link-ippvm", optional=true }
 
 [features]
 default = ["do-linking"]
 
-do-linking = ["link-ippcore", "link-ippcv", "link-ippi", "link-ipps"]
+do-linking = ["link-ippcore", "link-ippcv", "link-ippi", "link-ipps", "link-ippvm"]
 
 2017=["ipp-headers-sys/2017"]
 2018=["ipp-headers-sys/2018"]
