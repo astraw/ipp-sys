@@ -4,6 +4,13 @@ All user visible changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/), as described
 for Rust libraries in [RFC #1105](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md)
 
+## [0.4.5] - 2019-11-23
+
+### Fixed
+
+* ipps depends on ippvm ([PR #4](https://github.com/astraw/ipp-sys/pull/4)).
+  Thanks Matt Wilkinson.
+
 ## [0.4.4] - 2019-11-23
 
 ### Fixed
