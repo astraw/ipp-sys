@@ -11,6 +11,7 @@ This directory contains several crates:
  - `link-ippcv`: link ippcv library
  - `link-ippi`: link ippi library
  - `link-ipps`: link ipps library
+ - `link-ippvm`: link ippvm library
 
 Typically, you can just depend on `ipp-sys`. The `link-*` crates do not provide
 any rust code, but only serve to link the relevant IPP library. There are

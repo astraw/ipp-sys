@@ -1,0 +1,16 @@
+[package]
+name = "link-ippvm"
+description = "link ippvm library (part of ipp-sys Intel IPP bindings)"
+version = "0.1.0"
+authors = ["Andrew Straw <strawman@astraw.com>"]
+build = "build.rs"
+links = "libippvm"
+license = "MIT/Apache-2.0"
+categories = ["external-ffi-bindings"]
+readme = "README.md"
+
+[dependencies]
+link-ippcore = { version = "0.1", path = "../link-ippcore" }
+
+[build-dependencies]
+ipp-sys-build-help = { version = "0.1.2", path = "../ipp-sys-build-help" }

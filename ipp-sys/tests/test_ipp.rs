@@ -75,3 +75,13 @@ fn test_link_ipps() {
     assert!(dest[0]==1.23);
     println!("ipps OK");
 }
+
+
+#[test]
+fn test_link_ippvm() {
+    // Get the version from IPP at runtime.
+    let linked_version_major = unsafe{ (*ipp::ippvmGetLibVersion()).major };
+    let linked_version_minor = unsafe{ (*ipp::ippvmGetLibVersion()).minor };
+    println!("ippvm version {}.{} OK",
+        linked_version_major, linked_version_minor);
+}
