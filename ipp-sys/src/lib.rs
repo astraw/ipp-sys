@@ -70,7 +70,7 @@ See the [ipp-headers-sys page on docs.rs](http://docs.rs/ipp-headers-sys).
 
 // The link* creates are used to link the library.
 #![allow(unused_extern_crates)]
-extern crate ipp_headers_sys;
+
 #[cfg(feature = "do-linking")]
 extern crate link_ippcore;
 #[cfg(feature = "do-linking")]
