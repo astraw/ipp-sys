@@ -8,4 +8,5 @@ members = [
     "link-ippcv",
     "link-ippi",
     "link-ipps",
+    "link-ippvm",
     ]
