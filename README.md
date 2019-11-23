@@ -17,7 +17,7 @@ Typically, you can just depend on `ipp-sys`. The `link-*` crates do not provide
 any rust code, but only serve to link the relevant IPP library. There are
 multiple `link-*` crates because [the Cargo manifest `links` field supports only
 linking only a single library per
-crate](https://doc.rust-lang.org/cargo/reference/manifest.html#the-links-field-optional).
+crate](https://doc.rust-lang.org/cargo/reference/build-scripts.html#the-links-manifest-key).
 
 ## What is this crate?
 
